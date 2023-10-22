@@ -1,0 +1,47 @@
+Class AddInStarterRibbon
+
+	Public Property Get RibbonXML() As String
+      Return ReadRibbonXmlFromFile
+   End Property
+   
+   Private Function ReadRibbonXmlFromFile() As String
+      Return ReadXmlFile(GetRibbonXmlFilePath())
+   End Function
+   
+   Private Function GetRibbonXmlFilePath() As String
+      Dim ribbonFilePath As String
+      Dim fso As FileSystemObject
+      Dim appdata As String
+      Set fso = New FileSystemObject
+      
+      appdata = Environ$("appdata")
+      ribbonFilePath = CombinePath(appdata, "Microsoft\AddIns", "ACLibAddInStarterRibbon.xml")
+      If fso.FileExists(ribbonFilePath) Then
+         Return ribbonFilePath
+      End If
+      
+      ' next try
+      ribbonFilePath = CombinePath(appdata, "AccessCodeLibrary", "ACLibAddInStarterRibbon.xml")
+      If fso.FileExists(ribbonFilePath) Then
+         Return ribbonFilePath
+      End If
+      
+   End Function
+   
+   Private Function ReadXmlFile(ByVal FilePath As String) As String
+   	
+      Dim XmlText As String
+      
+      With New ADODB.Stream
+          .Charset = "utf-8"
+          .Open
+          .LoadFromFile FilePath
+          XmlText = .ReadText
+          .Close
+       End With
+      
+      Return XmlText
+      
+   End Function
+   
+End Class

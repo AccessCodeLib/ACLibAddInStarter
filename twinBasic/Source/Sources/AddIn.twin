@@ -1,0 +1,68 @@
+Class AddIn
+
+   Implements IDTExtensibility2
+
+   [ WithDispatchForwarding ]
+   Implements IRibbonExtensibility
+   
+   Private ApplicationObject As Object
+   
+   Private RibbonUI As IRibbonUI
+   Private Const AccessRibbonID As String = "Microsoft.Access.Database"
+   
+   '------------------------------------------------------------------------------
+   ' IDTExtensibility2
+   
+   Public Sub OnConnection(ByVal Application As Object, ByVal ConnectMode As ext_ConnectMode, ByVal AddInInst As Object, ByRef custom As Variant()) _
+                Implements IDTExtensibility2.OnConnection
+      Set ApplicationObject = Application
+   End Sub
+   
+   Public Sub OnDisconnection(ByVal RemoveMode As ext_DisconnectMode, ByRef custom As Variant()) _ 
+               Implements IDTExtensibility2.OnDisconnection
+      Set ApplicationObject = Nothing
+   End Sub
+   
+   Public Sub OnAddInsUpdate(ByRef custom As Variant()) _
+               Implements IDTExtensibility2.OnAddInsUpdate
+   '
+   End Sub
+   
+   Public Sub OnStartupComplete(ByRef custom As Variant()) _
+               Implements IDTExtensibility2.OnStartupComplete
+   '
+   End Sub
+   
+   Public Sub OnBeginShutdown(ByRef custom As Variant()) _
+               Implements IDTExtensibility2.OnBeginShutdown
+      Set RibbonUI = Nothing
+   End Sub
+   
+   '------------------------------------------------------------------------------
+   ' IRibbonExtensibility
+   
+   Private Function GetCustomUI(ByVal RibbonID As String) As String _
+               Implements IRibbonExtensibility.GetCustomUI
+      If RibbonID = AccessRibbonID Then
+      	With New AddInStarterRibbon
+            Return .RibbonXML
+         End With
+      End If
+   End Function
+   
+   Public Sub OnRibbonLoad(Ribbon As IRibbonUI)
+      Set RibbonUI = Ribbon
+   End Sub
+   
+   Public Sub ACLibRibbonCallBack_AddInItem_OnAction(ByRef Control As IRibbonControl)
+   
+      With New AddInStarter(ApplicationObject)
+      	.StartAddIn Control.Tag
+      End With
+   End Sub
+   
+   Public Sub ACLibRibbonCallBack_DialogBoxLauncher_OnAction(ByRef Control As IRibbonControl)
+      MsgBox Control.Tag
+   End Sub
+   
+End Class

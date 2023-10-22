@@ -1,0 +1,90 @@
+{
+	"configuration.inherits": "Defaults",
+	"project.appTitle": "ACLib AddIn Starter",
+	"project.buildPath": "${SourcePath}\\Build\\${ProjectName}_${Architecture}.${FileExtension}",
+	"project.buildType": "ActiveX DLL",
+	"project.description": "AClibAddInStarter",
+	"project.dllRegisterAfterBuild": false,
+	"project.dllRegisterLocalMachine": false,
+	"project.exportAfterSave": true,
+	"project.exportPath": "${SourcePath}\\Source",
+	"project.exportPathIsV2": true,
+	"project.id": "{90186C2C-3E7A-4675-BFE7-3516EE04B3B9}",
+	"project.licence": "GPL-3.0",
+	"project.name": "AClibAddInStarter",
+	"project.optionExplicit": true,
+	"project.references": [
+		{
+			"id": "{00020430-0000-0000-C000-000000000046}",
+			"lcid": 0,
+			"name": "OLE Automation",
+			"path32": "C:\\Windows\\SysWOW64\\stdole2.tlb",
+			"path64": "C:\\Windows\\System32\\stdole2.tlb",
+			"versionMajor": 2,
+			"versionMinor": 0
+		},
+		{
+			"hasBeenSplit": true,
+			"id": "{F50B82D0-DCAB-43FE-9631-11959D4A4728}",
+			"isCompilerPackage": true,
+			"licence": "MIT",
+			"name": "[COMPILER PACKAGE] WinNativeForms Package",
+			"path32": "",
+			"path64": "",
+			"publisher": "TWINBASIC-COMPILER",
+			"symbolId": "WinFormsPackage",
+			"versionBuild": 0,
+			"versionMajor": 0,
+			"versionMinor": 0,
+			"versionRevision": 31
+		},
+		{
+			"id": "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}",
+			"lcid": 0,
+			"name": "Microsoft Office 16.0 Object Library",
+			"path32": "C:\\Program Files (x86)\\Microsoft Office\\Root\\VFS\\ProgramFilesCommonX86\\Microsoft Shared\\OFFICE16\\MSO.DLL",
+			"path64": "",
+			"versionMajor": 2,
+			"versionMinor": 8
+		},
+		{
+			"id": "{AC0714F2-3D04-11D1-AE7D-00A0C90F26F4}",
+			"lcid": 0,
+			"name": "Microsoft Add-In Designer",
+			"path32": "c:\\Program Files (x86)\\Common Files\\DESIGNER\\MSADDNDR.OLB",
+			"path64": "",
+			"versionMajor": 1,
+			"versionMinor": 0
+		},
+		{
+			"id": "{420B2830-E718-11CF-893D-00A0C9054228}",
+			"lcid": 0,
+			"name": "Microsoft Scripting Runtime",
+			"path32": "C:\\Windows\\SysWOW64\\scrrun.dll",
+			"path64": "C:\\Windows\\System32\\scrrun.dll",
+			"versionMajor": 1,
+			"versionMinor": 0
+		},
+		{
+			"id": "{2A75196C-D9EB-4129-B803-931327F72D5C}",
+			"lcid": 0,
+			"name": "Microsoft ActiveX Data Objects 2.8 Library",
+			"path32": "C:\\Program Files (x86)\\Common Files\\System\\ado\\msado28.tlb",
+			"path64": "C:\\Program Files\\Common Files\\System\\ado\\msado28.tlb",
+			"versionMajor": 2,
+			"versionMinor": 8
+		}
+	],
+	"project.settingsVersion": 1,
+	"project.useProjectIdForTypeLibraryId": true,
+	"project.versionCompanyName": "AccessCodeLib.net",
+	"project.versionMajor": 1,
+	"project.versionMinor": 0,
+	"project.versionProductName": "ACLib Add-In Starter",
+	"project.versionRevision": 0,
+	"project.warnings": {
+		"errors": [],
+		"ignored": []
+	},
+	"runtime.useUnicodeStandardLibrary": true
+}

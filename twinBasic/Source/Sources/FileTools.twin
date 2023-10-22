@@ -1,0 +1,13 @@
+Module FileTools
+
+   Option Private Module
+
+   Public Function CombinePath(ParamArray PathItems()) As String
+      Return Replace(Join(PathItems, "\"), "\\", "\")
+   End Function
+   
+   Public Function AppDataAccessAddInPath() As String
+   	Return CombinePath(Environ$("appdata"), "Microsoft\AddIns")
+   End Function
+   
+End Module

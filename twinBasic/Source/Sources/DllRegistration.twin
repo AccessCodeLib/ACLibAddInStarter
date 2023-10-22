@@ -1,0 +1,47 @@
+Module DllRegistration
+   
+   Private Const ComClassName As String = VBA.Compilation.CurrentProjectName() & ".AddIn"
+   Private Const ComAddInFriendlyName As String = "ACLib Add-In Starter"
+   Private Const ComAddInDescription As String = "Starter Ribbon for Access Add-Ins"
+   Private Const ComAddInLoadBehavior As Long = 3
+   
+   Private Const AccessComAddInRegistryFolder As String = "HKCU\SOFTWARE\Microsoft\Office\Access\Addins\" & ComClassName & "\"
+   
+   Public Function DllRegisterServer() As Boolean
+   
+      On Error GoTo HandleErr
+
+      With CreateObject("WScript.Shell")
+         .RegWrite AccessComAddInRegistryFolder & "FriendlyName", ComAddInFriendlyName, "REG_SZ"
+         .RegWrite AccessComAddInRegistryFolder & "Description", ComAddInDescription, "REG_SZ"
+         .RegWrite AccessComAddInRegistryFolder & "LoadBehavior", ComAddInLoadBehavior, "REG_DWORD"
+      End With
+   
+      Return True
+      
+HandleErr:
+      MsgBox Err.Description & " (" & Err.Number & ")", VbMsgBoxStyle.vbCritical
+      Return False
+      
+   End Function
+
+   Public Function DllUnregisterServer() As Boolean
+      
+      On Error GoTo HandleErr
+      
+      With CreateObject("WScript.Shell")
+         .RegDelete AccessComAddInRegistryFolder & "FriendlyName"
+         .RegDelete AccessComAddInRegistryFolder & "Description"
+         .RegDelete AccessComAddInRegistryFolder & "LoadBehavior"
+         .RegDelete AccessComAddInRegistryFolder
+      End With
+   
+      Return True
+      
+   HandleErr:
+      MsgBox Err.Description & " (" & Err.Number & ")", VbMsgBoxStyle.vbCritical
+      Return False
+      
+   End Function
+   
+End Module

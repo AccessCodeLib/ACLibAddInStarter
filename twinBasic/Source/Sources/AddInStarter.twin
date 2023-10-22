@@ -1,0 +1,86 @@
+[ COMCreatable (False) ]
+Class AddInStarter
+
+   Private _ApplicationObject As Object
+
+   Public Sub New(ByVal ApplicationObjectRef As Object)
+   	Set _ApplicationObject = ApplicationObjectRef
+   End Sub
+   
+   Private Sub Class_Terminate()
+      Set _ApplicationObject = Nothing
+   End Sub
+   
+   Public Sub StartAddIn(ByVal StartTag As String)
+      
+      Dim ProcName As String
+      Dim ProcParams() As String
+      
+      ProcName = GetProcName(StartTag)
+      
+      If Right(StartTag, 1) = ")" Then
+         ProcParams = GetProcParams(StartTag)
+         Select Case UBound(ProcParams)
+         	Case 0
+               _ApplicationObject.Run ProcName, ProcParams(0)
+            Case 1
+               _ApplicationObject.Run ProcName, ProcParams(0), ProcParams(1)
+            Case 2
+               _ApplicationObject.Run ProcName, ProcParams(0), ProcParams(1), ProcParams(2)
+            Case Else
+               Err.Raise vbObjectError, "AddInStarter.StartAddIn", "Too many parameters (" & StartTag & ")"
+         End Select
+      Else
+         _ApplicationObject.Run ProcName
+      End If
+      
+   End Sub
+   
+   Private Function GetProcName(ByVal StartTag As String) As String
+   	
+   	Dim ProcName As String
+      
+      ProcName = StartTag
+   	If Right(ProcName, 1) = ")" Then
+         ProcName = Left(ProcName, InStrRev(ProcName, "(") - 1)
+   	End If
+      
+      If Left(ProcName, Len("%appdata%")) = "%appdata%" Then
+      	ProcName = Replace(ProcName, "%appdata%", Environ$("appdata"))
+      End If
+      
+      If InStr(1, ProcName, ":") > 0 Then
+      	Return ProcName
+      End If
+      
+      ' else append Add-in path
+      ProcName = CombinePath(AppDataAccessAddInPath(), ProcName)
+      
+      Return ProcName
+      
+   End Function
+   
+   Private Function GetProcParams(ByVal StartTag As String) As String()
+   	
+      Dim Params() As String
+      Dim ParamString As String
+      Dim i As Long
+      
+      If Right(StartTag, 1) <> ")" Then
+           Return Params
+      End If
+      
+      ParamString = Mid(StartTag, InStrRev(StartTag, "(") + 1)
+      ParamString = Left(ParamString, Len(ParamString) - 1)
+      
+      Params = Split(ParamString, ",")
+      
+      For i = LBound(Params) To UBound(Params)
+         Params(i) = Trim(Params(i))
+      Next
+      
+      Return Params
+      
+   End Function
+   
+End Class
