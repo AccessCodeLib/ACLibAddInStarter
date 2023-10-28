@@ -40,7 +40,7 @@
 			tag="DbmsConnectionWizard.CreatePassThroughQuery" />
 	</group>
 	<group id="G72e434ec-3280-4c74-a1d2-b93ce776c0ec" label="Analysis &#38;&#38; Optimization">
-		<button id="Cd5896e97-ec0c-4b61-8ed8-b42adf4c563d" label="Depency Checker" size="large" 
+		<button id="Cd5896e97-ec0c-4b61-8ed8-b42adf4c563d" label="Dependency Checker" size="large" 
 			imageMso="TraceDependents" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Determine dependencies" supertip="Determine dependencies" 
 			tag="ACCESS_DependencyChecker.startAddIn" />
 		<button id="C1b29cec1-9a6e-4442-ab93-d8fb642024d4" label="TM-AbhängigeObjekte" size="normal" 
