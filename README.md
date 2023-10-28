@@ -1,6 +1,6 @@
 # ACLib Access Add-In Starter Ribbon
 
-<image src="https://access-codelib.net/images/doc/AddInStarterRibbon.png">Ribbon to start Access add-ins</image>
+<image src="https://access-codelib.net/images/doc/ACLibAddInStarterRibbon.png">Ribbon to start Access add-ins</image>
 
 Save ACLibAddInStarterRibbon.xml with ribbon XML in %appdata%\Microsoft\AddIns
 
