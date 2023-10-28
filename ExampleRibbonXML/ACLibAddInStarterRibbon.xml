@@ -1,47 +1,47 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
 <ribbon startFromScratch="false" ><tabs><tab id="T7b54dc74-81cb-455e-93a6-3763fcf0b083" label="Tools">
 	<group id="Gd0000922-80a5-431e-b284-51582e0a0875" label="Access Code Library">
-		<button id="Ccb4ceb82-67c2-4ab8-8386-bcdd4940f356" label="Import-Assistent" size="large" 
-			imageMso="SourceControlCreateDatabaseFromProject" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Startet den Assisten für den Import" supertip="Assistent zum Importieren von Dateien aus der Code-Bibliothek" 
+		<button id="Ccb4ceb82-67c2-4ab8-8386-bcdd4940f356" label="Import Wizard" size="large" 
+			imageMso="SourceControlCreateDatabaseFromProject" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Starts the Import Wizard" supertip="Wizard for importing files from the code library" 
 			tag="ACLibImportWIzard.StartApplication" />
-		<button id="Cabb00539-5521-4ae6-839c-d38ce0030198" label="Alles aktualisieren" size="normal" 
-			imageMso="SourceControlRefreshStatus" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Assistent zum Importieren von Dateien aus der Code-Bibliothek" 
+		<button id="Cabb00539-5521-4ae6-839c-d38ce0030198" label="Update all" size="normal" 
+			imageMso="SourceControlRefreshStatus" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Updates all existing elements from the code library" 
 			tag="ACLibImportWizard.RefreshAllCodeLibAccessObjects" />
-		<button id="C22a78b03-6ad5-4eab-afaa-adec4e4833a0" label="Alles exportieren" size="normal" 
-			imageMso="SourceControlCheckOut" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Exportiert alle Module, Formulare und Bericht mit CodeLib-Tag" 
+		<button id="C22a78b03-6ad5-4eab-afaa-adec4e4833a0" label="Export all" size="normal" 
+			imageMso="SourceControlCheckOut" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Exports all modules, forms and report with CodeLib tag" 
 			tag="ACLibImportWizard.ExportAllCodeLibElements" />
-		<button id="C16a5fae2-fb72-4551-b190-823f478d8716" label="Alle Module exportieren" size="normal" 
-			imageMso="SourceControlCheckOut" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Exportiert alle Module"  
+		<button id="C16a5fae2-fb72-4551-b190-823f478d8716" label="Export all codemodules" size="normal" 
+			imageMso="SourceControlCheckOut" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Exports all codemodules"  
 			tag="ACLibImportWizard.ExportAllCodeLibModules" />
-		<button id="C98b8fb72-d518-4108-97be-b36489e1609b" label="FilterForm-Wizard" size="normal" 
-			imageMso="AccessFormWizard" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Startet den ACLib-FilterForm-Wizard" 
+		<button id="C98b8fb72-d518-4108-97be-b36489e1609b" label="FilterForm Wizard" size="normal" 
+			imageMso="AccessFormWizard" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Starts the ACLib-FilterForm wizard" 
 			tag="ACLibFilterFormWizard.StartApplication" />
-		<button id="EB781617-6AD9-4A9C-BA71-42C9A4A9313D" label="AccUnit-Loader" size="normal" 
-			imageMso="VisualBasic" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Startet den ACLib-AccUnit-Loader"  
+		<button id="EB781617-6AD9-4A9C-BA71-42C9A4A9313D" label="AccUnit Loader" size="normal" 
+			imageMso="VisualBasic" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Starts the AccUnit loader"  
 			tag="AccUnitLoader.StartApplication"  />
 		<dialogBoxLauncher>
-			<button id="C7ee972a3-25e1-47e2-bd60-70bb6477d16a" label="Gruppe anpassen" 
+			<button id="C7ee972a3-25e1-47e2-bd60-70bb6477d16a" label="Customize group" 
 			tag="d0000922-80a5-431e-b284-51582e0a0875" onAction="ACLibRibbonCallBack_dialogBoxLauncher_OnAction" />
 		</dialogBoxLauncher>
 	</group>
-	<group id="G0b0ae660-7dba-4ef9-aa55-f9429e63fcde" label="Datenverbindung">
+	<group id="G0b0ae660-7dba-4ef9-aa55-f9429e63fcde" label="Data connection">
 		<button id="C3aee268f-13ca-4e0d-b205-a8bf67752701" 
 			label="DBMS Connection Wizard" size="large" imageMso="FileManageMenu" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
-			screentip="Startet das Hauptfenster des DBMS-Connection-Wizard" 
-			supertip="Access-Add-In zum Verwalten von Verbindungsparametern und Code-Übertrag für den Verbindungsaufbau mittels Hilfsklassen." 
+			screentip="Starts the main window of the DBMS Connection Wizard" 
+			supertip="Access add-in for managing connection parameters and code transfer for connection establishment using auxiliary classes." 
 			tag="DbmsConnectionWizard.StartDbmsConnectionWizard" 
 		/>
-		<button id="Cf912f9e2-3c54-47ea-8329-b2889f5564c6" label="Tabellen verknüpfen" size="normal" 				   
-			imageMso="DatabaseLinedTableManager" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Startet den Assisten zum verknüpfen von Tabellen" 
+		<button id="Cf912f9e2-3c54-47ea-8329-b2889f5564c6" label="Link tables" size="normal" 				   
+			imageMso="DatabaseLinedTableManager" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Starts the wizard form for linking tables" 
 			tag="DbmsConnectionWizard.StartDbmsConnectionLinkTableWizard" 
 		/>
-		<button id="C7527d8f8-34df-4c1a-a371-4487725e5254" label="Pass-Through-Abfrage" size="normal" 
-			imageMso="ViewsAdpDiagramSqlView" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Öffnet eine Maske zum Testen von SQL-Anweisungen und Erstellen von Pass-Through-Abfragen" 
+		<button id="C7527d8f8-34df-4c1a-a371-4487725e5254" label="Pass-Through Query" size="normal" 
+			imageMso="ViewsAdpDiagramSqlView" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Opens a screen for testing SQL statements and creating pass-through queries" 
 			tag="DbmsConnectionWizard.CreatePassThroughQuery" />
 	</group>
-	<group id="G72e434ec-3280-4c74-a1d2-b93ce776c0ec" label="Analyse u. Optimierung">
+	<group id="G72e434ec-3280-4c74-a1d2-b93ce776c0ec" label="Analysis &#38;&#38; Optimization">
 		<button id="Cd5896e97-ec0c-4b61-8ed8-b42adf4c563d" label="Depency Checker" size="large" 
-			imageMso="TraceDependents" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Abhängigkeiten ermitteln" supertip="Abhängigkeiten ermitteln" 
+			imageMso="TraceDependents" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Determine dependencies" supertip="Determine dependencies" 
 			tag="ACCESS_DependencyChecker.startAddIn" />
 		<button id="C1b29cec1-9a6e-4442-ab93-d8fb642024d4" label="TM-AbhängigeObjekte" size="normal" 
 			imageMso="ZoomToSelection" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
@@ -54,31 +54,31 @@
 			tag="TM-FixObjectNames.TM_FixObjectNames" />
 	</group>
 	<group id="G29f3b7f3-b692-4939-8033-8b455b727a9b" label="V-Tools">
-		<button id="Ce89d10d8-039b-48ef-a4c0-391fa048c4a5" label="Container-Objekte" size="normal" 
+		<button id="Ce89d10d8-039b-48ef-a4c0-391fa048c4a5" label="Container objects" size="normal" 
 			imageMso="Connections" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="V-Tools.m_OpenTool(8)" />
-		<button id="C1ee2bde0-5dd7-470a-bffe-b1db3ab51f82" label="Formular-Vorlagen" size="normal" 
+		<button id="C1ee2bde0-5dd7-470a-bffe-b1db3ab51f82" label="Form Templates" size="normal" 
 			imageMso="CreateFormInDesignView" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="V-Tools.m_OpenTool(6)" />
-		<button id="C0e78ffa2-ec7f-497d-a394-029de837f51d" label="SQL verändern" size="normal" 
+		<button id="C0e78ffa2-ec7f-497d-a394-029de837f51d" label="Change SQL" size="normal" 
 			imageMso="ViewsAdpDiagramSqlView" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="V-Tools.m_OpenTool(3)" />
-		<button id="Cacbcb9ba-f75b-4fe3-a610-3547e3734495" label="Systemfarben" size="normal"
+		<button id="Cacbcb9ba-f75b-4fe3-a610-3547e3734495" label="System colors" size="normal"
 			imageMso="ControlLineColorPicker" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="V-Tools.m_OpenTool(1)" />
-		<button id="C8a481eba-9c3d-46a0-811c-1cda6a8a1c07" label="Suchen" size="normal" 
+		<button id="C8a481eba-9c3d-46a0-811c-1cda6a8a1c07" label="Search" size="normal" 
 			imageMso="FilePrintPreview" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="V-Tools.m_OpenTool(4)" />
-		<button id="Cfe83ca68-0981-4807-a57d-a27e0045bad8" label="DIB-Bilder" size="normal" 
+		<button id="Cfe83ca68-0981-4807-a57d-a27e0045bad8" label="DIB images" size="normal" 
 			imageMso="InsertDrawingCanvas" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="V-Tools.m_OpenTool(2)" />
 	</group>
-	<group id="Gefcb15ab-1e2e-4d27-8700-10c44b67d30a" label="Dokumentation">
+	<group id="Gefcb15ab-1e2e-4d27-8700-10c44b67d30a" label="Documentation">
 		<button id="C5a6187db-ddbe-49b0-b6a3-8285dcc7049e" label="Doxygen-Wizard" size="large"
-			imageMso="PivotTableLayoutShowInTabularForm" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Startet den Doxygen-Wizard" supertip="Access-Add-In zur Unterstützung der Dokumentationserstellung mit Doxygen." 
+			imageMso="PivotTableLayoutShowInTabularForm" onAction="ACLibRibbonCallBack_AddInItem_OnAction" screentip="Starts the Doxygen Wizard" supertip="Access add-in to support documentation creation with Doxygen." 
 			tag="DoxygenWizard.StartDoxygenWizard" />
 	</group>
-	<group id="G852c2e2b-203f-45c9-9516-334f3dc6f2fd" label="Sonstiges">
+	<group id="G852c2e2b-203f-45c9-9516-334f3dc6f2fd" label="Other">
 		<button id="C23cdf05e-d06c-4bf5-beaa-32e153cb9cc8" label="TM-RebuildDatabase" size="large" 
 			imageMso="SaveAndNew" onAction="ACLibRibbonCallBack_AddInItem_OnAction" 
 			tag="TM-RebuildDatabase.TM_RebuildDatabase" />
